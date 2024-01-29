@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024. Eng Ali Rabie +201005886912
+  -->
+
+<resources>
+
+    <style name="TrackSelectionDialogThemeOverlay" />
+</resources>
