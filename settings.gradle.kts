@@ -11,6 +11,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
+
 }
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -22,6 +23,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Task Project"
+rootProject.name = "Task Project```````"
 include(":app")
  
