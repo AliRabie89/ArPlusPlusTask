@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".main.ui.posts.PostsActivity">
+        tools:context=".main.ui.main.activites.MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
@@ -25,32 +25,35 @@
 
             <Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:title="Posts"
-                android:titleTextColor="@color/text_color_white"></Toolbar>
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_35sdp"
+                android:paddingBottom="@dimen/_20sdp"
+                android:background="@color/black"
+                android:title="@string/discover_articles"
+                android:id="@+id/toolbar"
+                android:titleTextColor="@color/text_color_white" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        <androidx.viewpager2.widget.ViewPager2
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/refresher"
+            android:id="@+id/pager"
+            app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+        <me.ibrahimsn.lib.SmoothBottomBar
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            app:backgroundColor="@color/black"
+            app:textSize="@dimen/_12sdp"
+            app:textColor="@color/yellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-            <com.todkars.shimmer.ShimmerRecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/_10sdp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:id="@+id/posts_list"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:listitem="@layout/item_layout_post"
-                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
-            </com.todkars.shimmer.ShimmerRecyclerView>
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            app:menu="@menu/menu_bottom" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2024. Eng Ali Rabie +201005886912
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item0"
+        android:title="@string/discover_articles"
+        android:icon="@drawable/baseline_article_24"/>
+
+    <item
+        android:id="@+id/item1"
+        android:title="@string/my_favorites"
+        android:icon="@drawable/baseline_archive_24"/>
+
+</menu>

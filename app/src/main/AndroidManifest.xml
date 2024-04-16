@@ -48,14 +48,14 @@
         android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AnimPlayer"
+        android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".main.base.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".main.ui.posts.PostsActivity"
+            android:name=".main.ui.main.activites.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

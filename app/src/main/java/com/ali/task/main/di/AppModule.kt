@@ -4,8 +4,8 @@
 
 package com.ali.task.main.di
 
-import com.ali.task.main.repositories.postsRepository.PostsRepository
-import com.ali.task.main.repositories.postsRepository.PostsRepositoryImp
+import com.ali.task.main.repositories.postsRepository.ArticlesRepository
+import com.ali.task.main.repositories.postsRepository.ArticlesRepositoryImp
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -15,5 +15,5 @@ import dagger.hilt.components.SingletonComponent
 @InstallIn(SingletonComponent::class)
 abstract class AppModule {
     @Binds
-    abstract fun providePostsRepository(postsRepositoryImp: PostsRepositoryImp): PostsRepository
+    abstract fun providePostsRepository(postsRepositoryImp: ArticlesRepositoryImp): ArticlesRepository
 }

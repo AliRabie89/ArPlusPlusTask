@@ -3,13 +3,12 @@
  */
 
 package com.ali.task.main.di
-
 import android.content.Context
 import android.content.SharedPreferences
-import com.intuit.sdp.BuildConfig
+import com.ali.task.BuildConfig
 import com.ali.task.main.data.remote.HeaderInterceptor
 import com.ali.task.main.data.preference.SharedPreferencesKeys.PREF_NAME
-import com.ali.task.main.data.remote.endPoints.PostsEndPoints
+import com.ali.task.main.data.remote.endPoints.ArticlesEndPoints
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -60,7 +59,7 @@ object NetworkModule {
     fun provideRetrofit(
         okHttpClient: OkHttpClient
     ): Retrofit = Retrofit.Builder()
-        .baseUrl("https://jsonplaceholder.typicode.com")
+        .baseUrl("https://newsapi.org/v2/")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
@@ -68,8 +67,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providePostsService(retrofit: Retrofit): PostsEndPoints =
-        retrofit.create(PostsEndPoints::class.java)
+    fun providePostsService(retrofit: Retrofit): ArticlesEndPoints =
+        retrofit.create(ArticlesEndPoints::class.java)
 
 
     @Provides

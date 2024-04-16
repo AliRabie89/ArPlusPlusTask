@@ -5,6 +5,9 @@
 package com.ali.task.main.common
 
 class Constants {
+    object ApiKey{
+        const val KEY = "9c466cb7e03e478b8abf6b97dfdbb961"
+    }
     object HttpRequestErrorCode {
         const val UN_AUTHORIZED = 401
         const val SERVER_ERROR = 500

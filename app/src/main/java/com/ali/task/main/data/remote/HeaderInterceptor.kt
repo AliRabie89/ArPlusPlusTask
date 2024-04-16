@@ -4,6 +4,7 @@
 
 package com.ali.task.main.data.remote
 
+import com.ali.task.main.common.Constants.ApiKey.KEY
 import okhttp3.Interceptor
 import okhttp3.Request
 import okhttp3.Response
@@ -11,7 +12,6 @@ import java.io.IOException
 import javax.inject.Inject
 
 class HeaderInterceptor @Inject constructor() : Interceptor {
-    val ANDROID = "0"
 
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
@@ -22,14 +22,13 @@ class HeaderInterceptor @Inject constructor() : Interceptor {
         val origin = chain.request()
         val originalHttpUrl = origin.url
         val url = originalHttpUrl.newBuilder()
-            .addQueryParameter("culture", "")
-            .addQueryParameter("ui-culture", "")
             .build()
         var request: Request? = null
         var builder: Request.Builder? = null
         builder = chain.request().newBuilder()
             .url(url)
             .addHeader("Accept", "application/json")
+            .addHeader("X-Api-Key",KEY)
         try {
             request = builder.build()
         } catch (e: Exception) {

@@ -21,7 +21,6 @@ import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
 import www.sanju.motiontoast.MotionToast
 
-
 fun Any.getClassName(): String {
     return this::class.java.simpleName
 }

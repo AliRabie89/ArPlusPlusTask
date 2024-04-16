@@ -16,25 +16,33 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.star.dima"
+        applicationId = "com.ali.task"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         multiDexEnabled = true
+        android.buildFeatures.buildConfig = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
     buildTypes {
         release {
+            buildConfigField("boolean", "DEBUG", "false") // Set DEBUG to false for release builds
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
+
+        debug {
+            isMinifyEnabled = false
+            buildConfigField("boolean", "DEBUG", "true") // Set DEBUG to true for debug builds
+        }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -99,4 +107,16 @@ dependencies {
 
     implementation ("com.facebook.shimmer:shimmer:0.5.0")
     implementation ("com.todkars:shimmer-recyclerview:0.4.1")
+
+    //Bottom Nav Bar
+    implementation ("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
+
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
+    //Room database
+    implementation ("androidx.room:room-runtime:2.6.1")
+    kapt ("androidx.room:room-compiler:2.6.1")
+    implementation ("androidx.room:room-ktx:2.6.1"
+)
 }
